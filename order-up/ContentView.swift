@@ -14,6 +14,9 @@ struct ContentView: View {
     @State private var flag = false
     @State private var tmp = 0
     @State private var arr: [String] = []
+    var totalPrice: Double {
+        Double(a) * 1.5 + Double(teh) * 1.2 + Double(toast) * 2.0
+    }
 
     var body: some View {
         VStack(spacing: 20) {
@@ -87,7 +90,7 @@ struct ContentView: View {
             .background(Color.yellow.opacity(0.22))
             .clipShape(RoundedRectangle(cornerRadius: 16))
 
-            Text("Total  $\(Double(a) * 1.5 + Double(teh) * 1.2 + Double(toast) * 2.0, specifier: "%.2f")")
+            Text("Total  $\(totalPrice, specifier: "%.2f")")
                 .font(.title)
                 .bold()
                 .padding(.top, 8)
