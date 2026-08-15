@@ -35,7 +35,7 @@ struct ContentView: View {
                     .font(.title)
                     .monospacedDigit()
                 Button {
-                    teh += 1
+                    a += 1
                     tmp = 1
                 } label: {
                     Image(systemName: "plus.circle.fill")
