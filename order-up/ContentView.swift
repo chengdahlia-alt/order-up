@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var flag = false
     @State private var tmp = 0
     @State private var arr: [String] = []
+    @State private var IsSheetShown = false
     var totalPrice: Double {
         Double(a) * 1.5 + Double(teh) * 1.2 + Double(toast) * 2.0
     }
@@ -96,12 +97,19 @@ struct ContentView: View {
                 .padding(.top, 8)
 
             Button("Place Order") {
+                IsSheetShown = true
             }
             .buttonStyle(.borderedProminent)
             .controlSize(.large)
             .font(.title2)
         }
         .padding(20)
+        .sheet(isPresented: $IsSheetShown) {
+            Text("Order Placed")
+                .font(.largeTitle)
+            Text("Total  $\(totalPrice, specifier: "%.2f")")
+                .font(.title)
+        }
     }
 }
 
